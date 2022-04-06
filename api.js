@@ -12,7 +12,7 @@ app.get('/api/btc', (req, res)=>{
     var parsedUrl = url.parse(req.url, true);
 
     console.log(parsedUrl.query); // returns the full query string object in terminal
-    console.log(parsedUrl.query.usd); // retunrs the value of the usd element inside of the query in terminal
+    console.log('Dollar amount: $' + parsedUrl.query.usd); // retunrs the value of the usd element inside of the query in terminal
 
     var usdElement = parsedUrl.query.usd; // storing the element value of usd element
     var usdConverter = (usdElement / 25000).toFixed(2); // converts USD to Bitcoin amount
@@ -26,7 +26,7 @@ app.get('/api/eth', (req, res)=>{
     var parsedUrl = url.parse(req.url, true); 
 
     console.log(parsedUrl.query); // returns the full query string object in terminal
-    console.log(parsedUrl.query.usd); // retunrs the value of the usd element inside of the query in terminal
+    console.log('Dollar amount: $' + parsedUrl.query.usd); // retunrs the value of the usd element inside of the query in terminal
 
     var usdElement = parsedUrl.query.usd; // storing the element value of usd element
     var usdConverter = (usdElement / 900).toFixed(2); // converts USD to Etherium amount
