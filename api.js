@@ -44,7 +44,9 @@ app.get(pathName, (req, res)=>{
 });
 
 app.all('*', (req, res)=> {                        //sends 404 message to webpage
-    console.log('Invalid Path Name');
+    var parsedUrl = url.parse(req.url, true); 
+    console.log('\nIncorrect Path Name: ' + parsedUrl.pathname);
+    console.log('Try again. This is an invalid Path Name.\n');
     res.status(404).send('404: Page not found.'); 
 });
 
